@@ -33,4 +33,19 @@ RSpec.describe Potluck do
     expect(potluck.get_all_from_category(:appetizer).first.name).to eq("Couscous Salad")
   end
 
+  it 'has a menu' do
+    bean_dip = Dish.new("Bean Dip", :appetizer)
+    potluck.add_dish(bean_dip)
+
+    expected = {
+      :appetizers => ["Bean Dip", "Couscous Salad", "Summer Pizza"],
+      :entres => ["Cocktail Meatballs", "Roast Pork"],
+      :desserts => ["Candy Salad"]
+    }
+    expect(potluck.menu).to eq(expected)
+  end
+
+  xit 'can give a ratio' do
+    expect(potluck.ratio(:appetizer)).to eq(50.0)
+  end
 end

@@ -45,7 +45,7 @@ RSpec.describe Potluck do
     expect(potluck.menu).to eq(expected)
   end
 
-  xit 'can give a ratio' do
+  it 'can give a ratio' do
     expect(potluck.ratio(:appetizer)).to eq(50.0)
   end
 end
